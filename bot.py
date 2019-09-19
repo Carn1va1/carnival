@@ -1,10 +1,10 @@
 import random
+import asyncio
 import discord
+from discord import Client
 from discord.ext import commands
 
 client = discord.Client()
-x = discord.ClientUser
-commands = commands.Bot(command_prefix='!')
 a = random.randrange(1, 100)
 b = 0
 c = 0
@@ -21,14 +21,8 @@ async def on_ready():
     await client.change_presence(status=discord.Status.idle, activity=game)
 
 
-@commands.command(name="c", aliases=["공지"], rest_is_raw=True)
-
-
 @client.event
 async def on_message(message):
-    id = message.author.id
-    channel = message.channel
-
     if message.content.startswith("!test"):
         await message.channel.send("test!!!!")
 
@@ -54,5 +48,6 @@ async def on_message(message):
                 elif a == b:
                     await message.channel.send("같습니다.")
                     break
+
 
 client.run('token')
