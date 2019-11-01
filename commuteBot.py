@@ -30,4 +30,4 @@ async def on_message(message):
         embed.set_footer(text="퇴근 시간 ")
         await message.channel.send(embed=embed)
 
-client.run('NjM5NzcxMDA1MjcwNjIyMjA4.XbwQIA.Fzru9P9T0jFUuUjFHYNRqEZFPOA')
+client.run('token')
